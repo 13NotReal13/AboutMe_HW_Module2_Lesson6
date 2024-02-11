@@ -56,8 +56,10 @@ final class LoginViewController: UIViewController {
         usernameTextField.text = ""
         passwordTextField.text = ""
     }
-    
-    // MARK: Alert
+}
+
+// MARK: Extension
+extension LoginViewController {
     private func showAlert(withTitle title: String, andMesage message: String) {
         let alert = UIAlertController(
             title: title,
@@ -72,4 +74,3 @@ final class LoginViewController: UIViewController {
         present(alert, animated: true)
     }
 }
-
