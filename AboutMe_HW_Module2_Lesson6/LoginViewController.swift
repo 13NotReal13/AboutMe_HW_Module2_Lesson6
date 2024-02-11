@@ -15,7 +15,7 @@ final class LoginViewController: UIViewController {
     private let username = "User"
     private let password = "1111"
     
-    // MARK: Validate data
+    // MARK: Override funcs
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard usernameTextField.text == username,
               passwordTextField.text == password else {
@@ -29,13 +29,11 @@ final class LoginViewController: UIViewController {
         return true
     }
     
-    // MARK: To hide keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
-    // MARK: Prepare
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let welcomeVC = segue.destination as? WelcomeViewController
         welcomeVC?.welcome = "Welcome, \(username)!"
@@ -44,19 +42,18 @@ final class LoginViewController: UIViewController {
         usernameTextField.becomeFirstResponder()
     }
     
-    // MARK: Unwind
+    // MARK: IBActions
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         usernameTextField.text = ""
         passwordTextField.text = ""
     }
     
-    // MARK: Actions for buttons
     @IBAction func forgotUsernameButtonPressed() {
-        showAlert(withTitle: "OOPS!", andMesage: "Your username: User")
+        showAlert(withTitle: "OOPS!", andMesage: "Your username: \(username)")
     }
     
     @IBAction func forgotPasswordButtonPressed() {
-        showAlert(withTitle: "OOPS!", andMesage: "Your password: 1111")
+        showAlert(withTitle: "OOPS!", andMesage: "Your password: \(password)")
     }
 }
 
