@@ -40,8 +40,8 @@ final class LoginViewController: UIViewController {
         let welcomeVC = segue.destination as? WelcomeViewController
         welcomeVC?.welcome = "Welcome, \(username)!"
         
-        usernameTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
+        usernameTextField.becomeFirstResponder()
     }
     
     // MARK: Unwind
