@@ -15,6 +15,20 @@ final class LoginViewController: UIViewController {
     private let username = "User"
     private let password = "1111"
     
+    // MARK: Validate data
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        guard usernameTextField.text == username,
+              passwordTextField.text == password else {
+            showAlert(
+                withTitle: "Invalid login or password",
+                andMesage: "Please, enter correct login and password"
+            )
+            return false
+        }
+        
+        return true
+    }
+    
     // MARK: To hide keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -27,34 +41,19 @@ final class LoginViewController: UIViewController {
         welcomeVC?.welcome = "Welcome, \(username)!"
     }
     
-    // MARK: Validate data
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard usernameTextField.text == username,
-                passwordTextField.text == password else {
-            showAlert(
-                withTitle: "Invalid login or password",
-                andMesage: "Please, enter correct login and password"
-            )
-            return false
-        }
-        
-        return true
+    // MARK: Unwind
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        usernameTextField.text = ""
+        passwordTextField.text = ""
     }
     
     // MARK: Actions for buttons
-    
     @IBAction func forgotUsernameButtonPressed() {
         showAlert(withTitle: "OOPS!", andMesage: "Your username: User")
     }
     
     @IBAction func forgotPasswordButtonPressed() {
         showAlert(withTitle: "OOPS!", andMesage: "Your password: 1111")
-    }
-    
-    // MARK: Unwind
-    @IBAction func unwind(for segue: UIStoryboardSegue) {
-        usernameTextField.text = ""
-        passwordTextField.text = ""
     }
 }
 
