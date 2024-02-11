@@ -15,22 +15,19 @@ final class LoginViewController: UIViewController {
     private let username = "User"
     private let password = "1111"
     
-    // MARK: To hide keyboard
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
+    // MARK: Actions for buttons
+    @IBAction func forgotUsernameButtonPressed() {
+        showAlert(withTitle: "OOPS!", andMesage: "Your username: User")
     }
     
-    // MARK: Prepare
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let welcomeVC = segue.destination as? WelcomeViewController
-        welcomeVC?.welcome = "Welcome, \(username)!"
+    @IBAction func forgotPasswordButtonPressed() {
+        showAlert(withTitle: "OOPS!", andMesage: "Your password: 1111")
     }
     
     // MARK: Validate data
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard usernameTextField.text == username,
-                passwordTextField.text == password else {
+              passwordTextField.text == password else {
             showAlert(
                 withTitle: "Invalid login or password",
                 andMesage: "Please, enter correct login and password"
@@ -41,14 +38,16 @@ final class LoginViewController: UIViewController {
         return true
     }
     
-    // MARK: Actions for buttons
-    
-    @IBAction func forgotUsernameButtonPressed() {
-        showAlert(withTitle: "OOPS!", andMesage: "Your username: User")
+    // MARK: To hide keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
-    @IBAction func forgotPasswordButtonPressed() {
-        showAlert(withTitle: "OOPS!", andMesage: "Your password: 1111")
+    // MARK: Prepare
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let welcomeVC = segue.destination as? WelcomeViewController
+        welcomeVC?.welcome = "Welcome, \(username)!"
     }
     
     // MARK: Unwind
