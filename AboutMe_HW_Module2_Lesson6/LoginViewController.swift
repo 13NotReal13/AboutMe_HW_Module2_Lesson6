@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  AboutMe_HW_Module2_Lesson6
 //
 //  Created by Иван Семикин on 10/02/2024.
@@ -12,13 +12,12 @@ final class LoginViewController: UIViewController {
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    private let username = "User"
+    private let user = "User"
     private let password = "1111"
     
     // MARK: Override funcs
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard usernameTextField.text == username,
-              passwordTextField.text == password else {
+        guard usernameTextField.text == user, passwordTextField.text == password else {
             showAlert(
                 withTitle: "Invalid login or password",
                 andMesage: "Please, enter correct login and password"
@@ -36,10 +35,10 @@ final class LoginViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let welcomeVC = segue.destination as? WelcomeViewController
-        welcomeVC?.welcome = "Welcome, \(username)!"
+        welcomeVC?.username = user
         
         passwordTextField.resignFirstResponder()
-        usernameTextField.becomeFirstResponder()
+        usernameTextField.resignFirstResponder()
     }
     
     // MARK: IBActions
@@ -48,12 +47,10 @@ final class LoginViewController: UIViewController {
         passwordTextField.text = ""
     }
     
-    @IBAction func forgotUsernameButtonPressed() {
-        showAlert(withTitle: "OOPS!", andMesage: "Your username: \(username)")
-    }
-    
-    @IBAction func forgotPasswordButtonPressed() {
-        showAlert(withTitle: "OOPS!", andMesage: "Your password: \(password)")
+    @IBAction func forgotRegisterData(_ sender: UIButton) {
+        sender.tag == 0
+            ? showAlert(withTitle: "OOPS!", andMesage: "Your username: \(user)")
+            : showAlert(withTitle: "OOPS!", andMesage: "Your password: \(password)")
     }
 }
 
