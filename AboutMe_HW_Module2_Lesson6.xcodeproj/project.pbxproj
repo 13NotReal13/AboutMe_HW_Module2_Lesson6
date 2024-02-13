@@ -58,16 +58,48 @@
 		79F3616A2B77F86700D6D5B2 /* AboutMe_HW_Module2_Lesson6 */ = {
 			isa = PBXGroup;
 			children = (
-				79F3616B2B77F86700D6D5B2 /* AppDelegate.swift */,
-				79F3616D2B77F86700D6D5B2 /* SceneDelegate.swift */,
-				79F3616F2B77F86700D6D5B2 /* LoginViewController.swift */,
-				79F3617F2B77FDE300D6D5B2 /* WelcomeViewController.swift */,
-				79F361712B77F86700D6D5B2 /* Main.storyboard */,
+				79F361AE2B7BE3BA00D6D5B2 /* ViewControllers */,
+				79F361B02B7BE40900D6D5B2 /* Models */,
+				79F361AF2B7BE3CD00D6D5B2 /* Storyboards */,
+				79F361AD2B7BE39C00D6D5B2 /* Configurations */,
 				79F361742B77F86800D6D5B2 /* Assets.xcassets */,
-				79F361762B77F86800D6D5B2 /* LaunchScreen.storyboard */,
-				79F361792B77F86800D6D5B2 /* Info.plist */,
 			);
 			path = AboutMe_HW_Module2_Lesson6;
+			sourceTree = "<group>";
+		};
+		79F361AD2B7BE39C00D6D5B2 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				79F3616B2B77F86700D6D5B2 /* AppDelegate.swift */,
+				79F3616D2B77F86700D6D5B2 /* SceneDelegate.swift */,
+				79F361792B77F86800D6D5B2 /* Info.plist */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		79F361AE2B7BE3BA00D6D5B2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				79F3616F2B77F86700D6D5B2 /* LoginViewController.swift */,
+				79F3617F2B77FDE300D6D5B2 /* WelcomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		79F361AF2B7BE3CD00D6D5B2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				79F361712B77F86700D6D5B2 /* Main.storyboard */,
+				79F361762B77F86800D6D5B2 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		79F361B02B7BE40900D6D5B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,7 +330,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GNN7DQ637Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AboutMe_HW_Module2_Lesson6/Info.plist;
+				INFOPLIST_FILE = AboutMe_HW_Module2_Lesson6/Configurations/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -331,7 +363,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GNN7DQ637Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AboutMe_HW_Module2_Lesson6/Info.plist;
+				INFOPLIST_FILE = AboutMe_HW_Module2_Lesson6/Configurations/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

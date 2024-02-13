@@ -37,7 +37,7 @@
                                             <color key="baseBackgroundColor" red="0.51627777330000002" green="0.41735286310000003" blue="0.79544821109999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="xbP-SQ-WxF" kind="presentation" identifier="FromLoginToWelcome" modalPresentationStyle="overFullScreen" id="pig-Lj-rry"/>
+                                            <segue destination="j4r-bP-lJL" kind="presentation" identifier="FromLoginToWelcome" modalPresentationStyle="overFullScreen" id="pig-Lj-rry"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="uSf-tm-FYf">
@@ -85,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="140" y="4"/>
         </scene>
-        <!--Welcome View Controller-->
+        <!--Item-->
         <scene sceneID="mDL-FZ-R56">
             <objects>
                 <viewController id="xbP-SQ-WxF" customClass="WelcomeViewController" customModule="AboutMe_HW_Module2_Lesson6" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,12 +136,30 @@
                             <constraint firstItem="YmV-kR-SYo" firstAttribute="centerX" secondItem="4iY-ee-Nhm" secondAttribute="centerX" id="oZJ-8Z-QZv"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="CJn-ya-6h7"/>
                     <connections>
                         <outlet property="welcomeLabel" destination="bfd-RJ-uSA" id="E6m-sQ-Q4M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGx-b5-vC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="kr4-pB-s7d" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="891" y="730"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="NcD-rF-haj">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="j4r-bP-lJL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kY1-mK-qx6">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xbP-SQ-WxF" kind="relationship" relationship="viewControllers" id="6FC-lc-bxB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hZd-9Q-v0h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="890.83969465648852" y="3.5211267605633805"/>
         </scene>
