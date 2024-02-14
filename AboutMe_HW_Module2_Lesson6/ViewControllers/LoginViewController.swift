@@ -12,12 +12,17 @@ final class LoginViewController: UIViewController {
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    private let user = "User"
-    private let password = "1111"
+    private let user = User.getUser()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        usernameTextField.text = user.login
+        passwordTextField.text = user.password
+    }
     
     // MARK: Override funcs
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard usernameTextField.text == user, passwordTextField.text == password else {
+        guard usernameTextField.text == user.login, passwordTextField.text == user.password else {
             showAlert(
                 withTitle: "Invalid login or password",
                 andMesage: "Please, enter correct login and password"
@@ -34,8 +39,16 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let welcomeVC = segue.destination as? WelcomeViewController
-        welcomeVC?.username = user
+        let tabBar = segue.destination as? UITabBarController
+        
+        tabBar?.viewControllers?.forEach { viewController in
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.user = user
+            } else if let navigationController = viewController as? UINavigationController {
+                let userDataVC = navigationController.topViewController as? UserDataViewController
+                userDataVC?.user = user
+            }
+        }
         
         passwordTextField.resignFirstResponder()
         usernameTextField.resignFirstResponder()
@@ -49,8 +62,8 @@ final class LoginViewController: UIViewController {
     
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-            ? showAlert(withTitle: "OOPS!", andMesage: "Your username: \(user)")
-            : showAlert(withTitle: "OOPS!", andMesage: "Your password: \(password)")
+        ? showAlert(withTitle: "OOPS!", andMesage: "Your username: \(user.login)")
+        : showAlert(withTitle: "OOPS!", andMesage: "Your password: \(user.password)")
     }
 }
 
