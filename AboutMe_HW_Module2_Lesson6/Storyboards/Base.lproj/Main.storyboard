@@ -416,11 +416,11 @@
             </objects>
             <point key="canvasLocation" x="890.83969465648852" y="3.5211267605633805"/>
         </scene>
-        <!--Ivan Semikin-->
+        <!--Profile-->
         <scene sceneID="EjW-c9-zlG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hPp-YJ-8yZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Ivan Semikin" image="person.crop.circle.fill" catalog="system" id="Fe1-sE-EgQ"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle.fill" catalog="system" id="Fe1-sE-EgQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="txj-J2-PiQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="96"/>
@@ -450,7 +450,7 @@
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
