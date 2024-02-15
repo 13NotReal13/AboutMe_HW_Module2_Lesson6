@@ -18,6 +18,7 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         usernameTextField.text = user.login
         passwordTextField.text = user.password
+        print("User ID: \(user.id)")
     }
     
     // MARK: Override funcs
@@ -49,9 +50,6 @@ final class LoginViewController: UIViewController {
                 userDataVC?.user = user
             }
         }
-        
-        passwordTextField.resignFirstResponder()
-        usernameTextField.resignFirstResponder()
     }
     
     // MARK: IBActions
