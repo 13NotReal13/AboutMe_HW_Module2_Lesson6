@@ -19,6 +19,8 @@ final class LoginViewController: UIViewController {
         usernameTextField.text = user.login
         passwordTextField.text = user.password
         print("User ID: \(user.id)")
+        
+//        view.addVerticalGradientLayer()
     }
     
     // MARK: Override funcs
